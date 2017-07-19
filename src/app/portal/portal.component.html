@@ -1,0 +1,57 @@
+<section class="container_body" *ngIf="company.movilProfile">
+  <div class="body__item" [ngStyle]="{'background-image': 'url(' + company.movilProfile + ')'}">
+
+    <section class="main" *ngIf="!activeCode" >
+
+      <div class="main_logo center">
+        <img src="{{company.logo}}">
+      </div>
+
+      <div class="main_information">
+         <h3>OBTEN INTERNET GRATUITO DESCARGANDO LA APP</h3>
+        <img class="tock_logo" src="../../assets/logo/logo.png">
+        <div class="dowload_app">
+          <a class="opt google" href="https://play.google.com/store/apps/details?id=com.stockall&hl=es">
+            <img src="../../assets/Img/play-store.png">
+          </a>
+          <a class="opt App" href="https://itunes.apple.com/mx/app/tockall/id1060268222?l=en&mt=8">
+            <img src="../../assets/Img/app-store.png">
+          </a>
+        </div> 
+      </div>
+
+      <div class="main_form">
+        <span>Coloca el codigo que te da el app acá</span>
+        <input type="text" placeholder="codigo" class="input_codigo" [(ngModel)]="code">
+        <a class="btn save center" (click)="validateCode()">Verfificar código</a>
+        <a class="btn information center">Internet en 2 minutos</a>
+      </div>
+
+      <div class="main_footer">
+        <small>UNA EXPERIENCIA</small>
+        <img src="../../assets/logo/logo.png">
+      </div>
+ 
+    </section>
+
+    <section class="welcome_user" *ngIf="activeCode" >
+
+      <div class="main_logo center">
+        <img src="{{company.logo}}">
+      </div>
+
+      <div class="welcome_information">
+        <h1>TE DAMOS LA BIENVENIDA</h1>
+        <h2>{{session.namePrivacity}}</h2>
+        <a class="btn_information center">Internet gratuito por 2 horas</a>
+      </div>
+
+      <div class="main_footer">
+        <small>UNA EXPERIENCIA</small>
+        <img src="../../assets/logo/logo.png">
+      </div>
+
+    </section>
+
+  </div>
+</section>
